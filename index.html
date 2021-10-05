@@ -37,32 +37,45 @@ Click on the divs. The div is BLUE when unselected and BLACK when selected.
   </body>
  
 <head>
-<script>
-  window.selectedid = 'none';
-
-  function untoggle() {
-	window.selectedid = 'none';
+<style>
+p.white {
+	background-color: #FFFFFF;
+	white-space: pre;
+	padding: 10px;
 }
+
+p.black {
+	background-color: #000000;
+	white-space: pre;
+	padding: 10px;
+}
+</style>
+
+<body>
+Click on the divs. The div is BLUE when unselected and BLACK when selected.
+
+ <div class="absolute" style='border: 0px solid grey; font-size: 14px; left: 71px; top: 102px; position: absolute; background-color: #3b55cc;' id='div1' style='' onclick='toggle("div1")'>
+  <code style='color:white; '>id:DIV1</code>
+  <p class='white' id='insidediv1'>These are the contents of DIV1. They can include any usual HTML elements.
+  This one contains an iFrame to one of my website chatboxengine1.000webhostapp.com.
+  </p>
+  <iframe style='background-color: #999999; '  width='1200' height='400' src='https://chatboxengine1.000webhostapp.com/textengine/sitechats/inchat-div.php?chatnum=mycontact&refreshrate=5000&explorer=0&encoderm=UTF-8&namer='></iframe>
+  </div>
   
-  function toggle(tovalue) {
-	if (window.selectedid == 'none') {
-		window.selectedid = tovalue;
-		console.log('SET')
-		document.getElementById(tovalue).style.background = 'black';
-	} else {
-		window.selectedid = 'none';
-		console.log('RESET')
-		document.getElementById(tovalue).style.background = '#3b55cc';
-	}
-}
-function plot(event) {
-	document.getElementById(window.selectedid).style.left = event.clientX - 10+'px'
-	document.getElementById(window.selectedid).style.top = event.clientY - 10+'px'
-	console.log('Moved to x='+event.clientX+' y='+event.clientY+' id='+window.selectedid)
-}
-
-document.body.addEventListener('mousemove', e => {
-plot(e);
-})
-</script>
+  
+   <div class="absolute" style='font-size: 14px; left: 701px; top: 0px; position: absolute; background-color: #3b55cc;' id='div2' style='' onclick='toggle("div2")'>
+  <code style='color:white; '>id:DIV2</code>
+  <p class='white' id='insidediv2'>These are the contents of DIV2. This one is boring.</p>
+  </div>
+  
+     <div class="absolute" style='font-size: 14px; left: 1070px; top: 0px; position: absolute; background-color: #3b55cc;' id='div3' style='' onclick='toggle("div3")'>
+  <code style='color:white; '>id:DIV3</code>
+  <p class='white' id='insidediv2'>These are the contents of DIV3. This one is also boring.</p>
+  </div>
+  
+  </body>
+ 
+<head>
+<script type="text/javascript" src="selectadiv.js"></script>
+</head>
 </head>
